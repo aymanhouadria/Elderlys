@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edita esta empresa</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<h2>Editando empresa</h2>
+<form action="#" th:action="@{/company/update}"
+      th:object="${company}" method="post">
+    <table>
+        <tr>
+            <!--<td><label>CIF empresa</label></td>-->
+            <td><input type="text" hidden th:field="*{CIF}" /></td>
+        </tr>
+        <tr>
+            <td><label>Nombre empresa</label></td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td><label>Dirección empresa</label></td>
+            <td><input type="text" th:field="*{address}" /></td>
+        </tr>
+        <tr>
+            <td><label>Nombre de persona de contacto</label></td>
+            <td><input type="text" th:field="*{CPName}" /></td>
+        </tr>
+        <tr>
+            <td><label>Número de telefono de persona de contacto</label></td>
+            <td><input type="text" th:field="*{CPPhoneNumber}" /></td>
+        </tr>
+        <tr>
+            <td><label>Correo electrónico del responsable</label></td>
+            <td><input type="text" th:field="*{CPPersonEmail}" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="submit" value="Aceptar edición" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

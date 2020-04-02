@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestionar empresas</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h2>Nueva empresa</h2>
+    <form class="form-horizontal" action="#" th:action="@{/company/add}"
+          th:object="${company}" method="post">
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="CIF">CIF empresa:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="CIF" th:field="*{CIF}" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="name">Nombre empresa:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="name" th:field="*{name}" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="address">Dirección de empresa:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="address" th:field="*{address}" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="CPName">Persona de contacto de empresa:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="CPName" th:field="*{CPName}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="CPPhoneNumber">Teléfono de la persona de contacto:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="CPPhoneNumber" th:field="*{CPPhoneNumber}"/>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-2" for="CPPersonEmail">Correo electrónico de la persona de contacto</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="CPPersonEmail" th:field="*{CPPersonEmail}"/>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Añade empresa</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

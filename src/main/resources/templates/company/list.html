@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gestionar compañías</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Lista de compañías</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nombre compañía</th>
+            <th>Dirección</th>
+            <th>Persona de contacto</th>
+            <th>Teléfono de contacto</th>
+            <th>Correo electrónico</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="company: ${companies}">
+            <td th:text="${company.name}"></td>
+            <td th:text="${company.address}"></td>
+            <td th:text="${company.CPName}"></td>
+            <td th:text="${company.CPPhoneNumber}"></td>
+            <td th:text="${company.CPPersonEmail}"></td>
+            <td> <a th:href="@{/company/update/{cif}/(cif=${company.CIF})}" class="btn btn-warning" role="button">Edita compañía</a></td>
+            <td> <a th:href="@{/company/delete/{cif}/(cif=${company.CIF})}" class="btn btn-danger" role="button">Borrar compañía</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="add" class="btn btn-success" role="button">Añade compañía</a>
+</div>
+</body>
+</html>
