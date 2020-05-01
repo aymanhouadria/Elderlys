@@ -16,6 +16,7 @@
             <label class="control-label col-sm-2" for="CIF">CIF empresa:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="CIF" th:field="*{CIF}" />
+                <output th:if="${#fields.hasErrors('CIF')}" th:errors="*{CIF}"></output>
             </div>
         </div>
 
@@ -23,6 +24,7 @@
             <label class="control-label col-sm-2" for="name">Nombre empresa:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="name" th:field="*{name}" />
+                <output th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></output>
             </div>
         </div>
 
@@ -30,6 +32,7 @@
             <label class="control-label col-sm-2" for="address">Dirección de empresa:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="address" th:field="*{address}" />
+                <output th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></output>
             </div>
         </div>
 
@@ -37,6 +40,7 @@
             <label class="control-label col-sm-2" for="CPName">Persona de contacto de empresa:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="CPName" th:field="*{CPName}"/>
+                <output th:if="${#fields.hasErrors('CPName')}" th:errors="*{CPName}"></output>
             </div>
         </div>
 
@@ -44,6 +48,7 @@
             <label class="control-label col-sm-2" for="CPPhoneNumber">Teléfono de la persona de contacto:</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="CPPhoneNumber" th:field="*{CPPhoneNumber}"/>
+                <output th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></output>
             </div>
         </div>
 
@@ -51,6 +56,7 @@
             <label class="control-label col-sm-2" for="CPPersonEmail">Correo electrónico de la persona de contacto</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" id="CPPersonEmail" th:field="*{CPPersonEmail}"/>
+                <output th:if="${#fields.hasErrors('CPPersonEmail')}" th:errors="*{CPPersonEmail}"></output>
             </div>
         </div>
 
