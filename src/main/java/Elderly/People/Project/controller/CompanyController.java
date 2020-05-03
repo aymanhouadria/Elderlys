@@ -46,7 +46,7 @@ public class CompanyController {
         return "redirect:list";
     }
 
-  
+
 
     @RequestMapping(value="/update/{cif}", method = RequestMethod.GET)
     public String editCompany(Model model, @PathVariable String cif) {
