@@ -1,4 +1,4 @@
 package Elderly.People.Project.controller;
 
-public class ContrarController {
+public class ContractController {
 }

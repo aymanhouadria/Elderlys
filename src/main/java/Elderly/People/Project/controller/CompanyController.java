@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+
 @Controller
 @RequestMapping("/company")
 public class CompanyController {
@@ -37,11 +38,15 @@ public class CompanyController {
 
     @RequestMapping(value="/add", method= RequestMethod.POST)
     public String processAddSubmit(@ModelAttribute("company") Company company, BindingResult bindingResult) {
+        CompanyValidator companyValidator = new CompanyValidator();
+        CompanyValidator.validate(company, bindingResult);
         if (bindingResult.hasErrors())
             return "company/add";
         companyDao.addCompany(company);
         return "redirect:list";
     }
+
+
 
     @RequestMapping(value="/update/{cif}", method = RequestMethod.GET)
     public String editCompany(Model model, @PathVariable String cif) {
@@ -64,4 +69,6 @@ public class CompanyController {
         companyDao.deleteCompany(cif);
         return "redirect:../list";
     }
+
+
 }
