@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+
 @Controller
 @RequestMapping("/company")
 public class CompanyController {
@@ -45,6 +46,7 @@ public class CompanyController {
         return "redirect:list";
     }
 
+  
 
     @RequestMapping(value="/update/{cif}", method = RequestMethod.GET)
     public String editCompany(Model model, @PathVariable String cif) {

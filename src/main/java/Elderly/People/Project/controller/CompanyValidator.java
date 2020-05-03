@@ -11,7 +11,7 @@ public class CompanyValidator implements Validator {
 
     }
     @Override
-    public  void validate(Object obj, Errors errors) {
+    public static void validate(Object obj, Errors errors) {
         Company company = (Company)obj;
         if (company.getCIF().trim().equals(""))
             errors.rejectValue("CIF", "obligatorio");
